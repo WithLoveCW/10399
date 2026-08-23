@@ -77,7 +77,7 @@
   width: 100%;
   height: 100%;
 
-  visibility: visible;
+  visibility: inherit;
   text-align: center;
 }
 
@@ -251,7 +251,7 @@ if (bgMusic && bgMusic.paused) {
     console.log("Background music could not play:", error);
   });
 }
-		document.getElementById("messageGroup").style.visibility = "visible";
+	
 		  const winSound = document.getElementById("winSound");
 
 if (winSound && winSound.paused) {
