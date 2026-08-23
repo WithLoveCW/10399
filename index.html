@@ -151,7 +151,7 @@ color: #C2185B;
   <source src="./sounds/win.mp3" type="audio/mpeg">
 </audio>
 <audio id="bgMusic" preload="auto" loop>
-   <source id="bgMusicSource" src="./sounds/A-star-shines-for-you.mp3" type="audio/mpeg">
+   <source id="bgMusicSource" src="./sounds/SEXY_GIRL30_SEC.mp3" type="audio/mpeg">
 </audio>
   <script>
 	  const SUPABASE_URL = "https://bfzhvulpymbqzwxorzih.supabase.co";
@@ -371,7 +371,7 @@ function launchConfetti() {
 
   if (typeof confetti !== "function") return;
 
-        const COLORS = ["#0A2D6D", "#D4AF37", "#FFFFFF"];
+        const COLORS = ["#D4AF37", "#F7B6C8", "#FFFFFF"];
 
         // Burst #1 immediately
         confetti({
@@ -431,7 +431,24 @@ function launchConfetti() {
         })();
       }
     });
+// 🎵 Fade background music during the final 2 seconds
+const bgMusic = document.getElementById("bgMusic");
 
+bgMusic.addEventListener("timeupdate", () => {
+  const fadeDuration = 2;
+  const timeLeft = bgMusic.duration - bgMusic.currentTime;
+
+  if (timeLeft <= fadeDuration && timeLeft > 0) {
+    bgMusic.volume = BG_MUSIC_VOLUME * (timeLeft / fadeDuration);
+  }
+});
+
+// Reset volume when the music loops
+bgMusic.addEventListener("seeked", () => {
+  if (bgMusic.currentTime < 1) {
+    bgMusic.volume = BG_MUSIC_VOLUME;
+  }
+});
 	  loadDetails();
 	  
     // Resize responsiveness
