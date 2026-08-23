@@ -18,6 +18,12 @@
     font-weight: normal;
     font-style: normal;
   }
+	  @font-face {
+  font-family: 'Feel Script';
+  src: url('./images/Feel-Script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
   html {
     box-sizing: border-box;
@@ -60,8 +66,7 @@
 #messageGroup {
   position: absolute;
 
-  /* MOVE THE WHOLE MESSAGE GROUP UP/DOWN */
-  top: 46%;
+
 
   left: 50%;
   transform: translateX(-50%);
@@ -70,22 +75,23 @@
   z-index: 1;
   visibility: hidden;
 
-  /* KEEP BOTH MESSAGES STACKED WITH A FIXED GAP */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  
 
   text-align: center;
 }
 
-	  #mainMessage {
+	 #mainMessage {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translateX(-50%);
+
   /* CHANGE MAIN MESSAGE WIDTH HERE */
   width: 44%;
 
   margin: 0;
 
-  font-family: 'Aesthet', serif;
+  font-family: 'Feel Script', cursive;
   font-size: clamp(21px, 2.8vh, 34px);
   line-height: 1;
 
@@ -93,6 +99,10 @@
 }
 
 	  #secondaryMessage {
+		  position: absolute;
+top: 49%;
+left: 50%;
+transform: translateX(-50%);
   /* CHANGE SECONDARY MESSAGE WIDTH HERE */
   width: 40%;
 
